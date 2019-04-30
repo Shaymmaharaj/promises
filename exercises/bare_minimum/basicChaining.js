@@ -48,10 +48,10 @@ var promisification = require('./promisification');
 //write file promise
 const writeFilePromise = (file, data) => {
   return new Promise((resolve, reject) => {
-      fs.writeFile(file, data, error => {
-          if (error) reject(error);
-          resolve("file created successfully with handcrafted Promise!");
-      });
+    fs.writeFile(file, data, error => {
+      if (error) { reject(error); }
+      resolve('file created successfully with handcrafted Promise!');
+    });
   });
 };
 
@@ -60,15 +60,15 @@ Promise.promisifyAll([promiseFunctions, promisification, writeFilePromise]);
 var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
   
   return promiseFunctions.pluckFirstLineFromFileAsync(readFilePath)
-  .then(function(user){
-    //console.log("user:" + user);
-   return promisification.getGitHubProfileAsync(user);
-  })
-  .then(function(gitHubProfile){
-    //console.log("gitHubProfile:"+ JSON.stringify(gitHubProfile));
-    //console.log(writeFilePath);
-    return writeFilePromise(writeFilePath, JSON.stringify(gitHubProfile));
-  })
+    .then(function(user) {
+      //console.log("user:" + user);
+      return promisification.getGitHubProfileAsync(user);
+    })
+    .then(function(gitHubProfile) {
+      //console.log("gitHubProfile:"+ JSON.stringify(gitHubProfile));
+      //console.log(writeFilePath);
+      return writeFilePromise(writeFilePath, JSON.stringify(gitHubProfile));
+    });
 
 };
 

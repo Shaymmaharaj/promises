@@ -13,7 +13,7 @@ var getGitHubProfile = function(user, callback) {
   var options = {
     url: 'https://api.github.com/users/' + user,
     headers: { 'User-Agent': 'request' },
-    json: true  // will JSON.parse(body) for us
+    json: true // will JSON.parse(body) for us
   };
 
   request.get(options, function(err, res, body) {
@@ -55,7 +55,7 @@ var readFileAndMakeItFunny = function(filePath, callback) {
       })
       .join('\n');
 
-    callback(null,funnyFile);
+    callback(null, funnyFile);
   });
 };
 //Promisify them if you can, otherwise roll your own promise returning function
