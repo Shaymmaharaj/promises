@@ -22,9 +22,9 @@ var pluckFirstLineFromFile = function (filePath, callback) {
       callback(err);
     } else {
       //console.log(data.toString().split('\n')[0]);
-      callback(null,data.toString().split('\n')[0]);
+      callback(null, data.toString().split('\n')[0]);
     }
-  })
+  });
 };
 
 // This function should retrieve the status code of a GET request to `url`
@@ -34,7 +34,7 @@ var pluckFirstLineFromFile = function (filePath, callback) {
 //   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 //   console.log('body:', body); // Print the HTML for the Google homepage.
 // });
-var getStatusCode = function (url , callback) {
+var getStatusCode = function (url, callback) {
   request(url, (err, response) => {
     if (err) {
       callback(err);
@@ -42,7 +42,7 @@ var getStatusCode = function (url , callback) {
       
       callback(null, response && response.statusCode );
     }
-  })
+  });
 };
 
 // Export these functions so we can test them and reuse them in later exercises

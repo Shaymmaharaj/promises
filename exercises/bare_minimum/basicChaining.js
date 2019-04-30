@@ -15,8 +15,8 @@ var Promise = require('bluebird');
 
 var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
   // TODO
-    var username = fs.readFileSync(readFilePath).toString().split('\n')[0];
-    console.log(username);
+  var username = fs.readFileSync(readFilePath).toString().split('\n')[0];
+  console.log(username);
 
 
 };

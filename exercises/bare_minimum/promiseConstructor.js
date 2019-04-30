@@ -12,14 +12,14 @@ var Promise = require('bluebird');
 var pluckFirstLineFromFileAsync = function(filePath) {
   // TODO
   return new Promise(function (resolve, reject) {
-  fs.readFile(filePath, (err, data) => {
-    //pass error into reject function
-    if (err) {
-      reject(err);
-    } else {
-      resolve(data.toString().split('\n')[0]);
-    }
-  })
+    fs.readFile(filePath, (err, data) => {
+      //pass error into reject function
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data.toString().split('\n')[0]);
+      }
+    });
 
 
   });
@@ -33,7 +33,7 @@ var getStatusCodeAsync = function(url) {
       if (err) {
         reject(err);
       } else {
-       resolve( response && response.statusCode );
+        resolve( response && response.statusCode );
       }
     });
   });  
