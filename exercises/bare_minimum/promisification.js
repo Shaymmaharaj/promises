@@ -26,9 +26,7 @@ var getGitHubProfile = function(user, callback) {
     }
   });
 };
-// var nodeStyle = require('./callbackReview.js');
-// var pluckFirstLineFromFileAsync = Promise.promisify(nodeStyle.pluckFirstLineFromFile)
-// var getStatusCodeAsync = Promise.promisify(nodeStyle.getStatusCode)
+
 
 var getGitHubProfileAsync = Promise.promisify(getGitHubProfile); 
 
@@ -61,7 +59,6 @@ var readFileAndMakeItFunny = function(filePath, callback) {
 //Promisify them if you can, otherwise roll your own promise returning function
 var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny);
 
-//readFileAndMakeItFunnyAsync(filePath, callback).then(function(funnyFile){});
 
 // Export these functions so we can test them and reuse them in later exercises
 module.exports = {
